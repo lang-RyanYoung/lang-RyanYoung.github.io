@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Young | Portfolio</title>
+    <link rel="stylesheet" href="p4styles.css">
+</head>
+<body>
+    <header id="header"> 
+        <h1> Ryan Young </h1>
+        <p> Full Stack Developer</p>    
+    </header>
+    <nav id="navigation" class="top_nav"> 
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="contact.html">Contact Me!</a></li>
+        </ul>
+    </nav>
+    <main id="main_content">
+        <h2>Contact Me</h2>
+        <!-- novalidate turns off the default validation, to avoid any overlap with ours -->
+        <form id="contact_form" action="index.html" method="GET" novalidate>
+            <div id="name_group">
+                <label for="user_name">Full Name:</label>
+                <input type="text" id="user_name">
+                <!-- span is inline - use it here instead of <p> to avoid layout breakage -->
+                <span id="name_error" class="error_msg"></span>
+            </div>
+
+            <div id="phone_group">
+                <label for="user_phone">Phone Number (10 digits):</label>
+                <input type="text" id="user_phone">
+                <span id="phone_error" class="error_msg"></span>
+            </div>
+
+            <div id="email_group">
+                <label for="user_email">Email Address:</label>
+                <input type="email" id="user_email">
+                <span id="email_error" class="error_msg"></span>
+            </div>
+
+            <div id="message_group">
+                <label for="user_message">Message:</label>
+                <textarea id="user_message" rows="5"></textarea>
+                <span id="message_error" class="error_msg"></span>
+            </div>
+
+            <button type="submit" id="submit_btn">Send Message</button>
+            <button type="reset" id="reset_btn">Clear Form</button>
+            <div id="form_feedback"></div>
+        </form>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2026 Ryan Young</p>
+        <nav class="footer_nav">
+            <small>
+                <a href="index.html">Homepage</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">My Projects</a>
+                <a href="contact.html">Contact Me!</a>
+            </small>
+        </nav>
+    </footer>
+    <!-- calls script.js to perform all the validation -->
+    <script src="script.js"></script>
+    </body>
+</html>

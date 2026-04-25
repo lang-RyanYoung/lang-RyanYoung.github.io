@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Young | Portfolio</title>
+    <link rel="stylesheet" href="p4styles.css">
+</head>
+<body>
+    <header id="header"> 
+        <h1> Ryan Young </h1>
+        <p> Full Stack Developer</p>    
+    </header>
+    <nav id="navigation" class="top_nav"> 
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="contact.html">Contact Me!</a></li>
+        </ul>
+    </nav>
+
+    <main id="main_content"> 
+        <h2>Project Showcase</h2>
+        <div id="project_container" class="project-grid"></div>
+        <!-- uses json to display project info - much easier to maintain in future -->
+        <div id="detail_area">
+            <h3>Project Specifics</h3>
+            <p id="detail_display">Click a project card above to see more details!</p>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2026 Ryan Young</p>
+        <nav class="footer_nav">
+            <small>
+                <a href="index.html">Homepage</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">My Projects</a>
+                <a href="contact.html">Contact Me!</a>
+            </small>
+        </nav>
+    </footer>
+    <!-- The container which gets my data from projects.json to display on my webpage -->
+    <!-- Sits at the bottom so that the text, images and nav loads first - only needs to be read and stored when it's needed -->
+    <template id="project_template">
+        <div class="project-card">
+            <h3 class="p_title"></h3>
+            <p class="p_desc"></p>
+            <span class="p_tag"></span>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Ubuntu Server Deployment",
+        "desc": "Installed Ubuntu on a spare machine I had to run Minecraft. Easier to manage from anywhere, and makes things more efficient",
+        "tag": "SysAdmin",
+        "full_details": "I decided that for my friends I wanted to self host a Minecraft server. I had a spare machine, so I installed the Ubuntu installer on a spare flash drive, formatted it with Rufus, and got to work. The first step was to log onto the machine and save my Windows product key, in case I ever wanted to change my mind. I then formatted it to use Ubuntu, which is much more RAM efficient than Win11, and friendlier to long server uptimes. I stuck to Minecraft Paper with plugins to avoid having to be tech support for a modded server." 
+    },
+    {
+        "title": "Discord Link",
+        "desc": "Developed a simple script to monitor server health and send status reports to Discord via Webhooks",
+        "tag": "Server Automation",
+        "full_details": "I decided that my server needed an automated backup function, because I may forget. I set it up to backup at 4:00am every night (to avoid kicking players as it saves). But, I didn't want to manually check. So, I got the discord webhook for my server and wrote a simple script that displays CPU temp, total storage space used, purges backups older than two weeks and sends a message displaying all of this data to a Discord channel in my own server when it does. In the future, I'll update it to push a message to a separate channel in the same server when a player joins, to make it easier to coordinate playing together. And potentially a function that if a user types /silent in the Minecraft client, it won't send that 'playername joined the server' message if they want to game alone."
+    },
+    {
+        "title": "Network Tunneling",
+        "desc": "Implemented playig.gg to bypass restrictions from my landlords router",
+        "tag": "Networking",
+        "full_details": "In setting up the server, I originally wanted to set up port forwarding, but I had a problem. My router (provided by my landlord) only gives me access to the wifi network and none of the deeper settings! I had to find a worrkaround. I ended up using playit.gg to get a server to bounce off of so I didn't need to port forward, and it also acts as a rudimentary form of security by not requiring me to open my router to the whole internet. I also had to point the server at my ip, which gave me a new problem: It wasn't static. Playing on the server, every once in a while you would get randomly kicked as the router shuffled the IP of the devices in my home. My solution to this was to install Tailscale and use the Tailscale IP, which is static, and gives me greater control over the server!"
+    },
+    {
+        "title": "PaperMC Server",
+        "desc": "A self-hosted minecraft server on said spare machine, for my friends and family to play Minecraft without paying to host a realm every month",
+        "tag": "Java",
+        "full_details": "I ended up setting up a PaperMC server, as it has less requirements than pure vanilla and supports plugins, and installed ViaVersion (so version support wasn't as big of an issue) and EssentialsX for basic commands such as /home or /tp2p (tp to player). My machine only has 8G of RAM, so a smaller overhead (via Ubuntu and PaperMC) is a huge bonus for myself."
+    },
+    {
+        "title": "Minecraft Database link",
+        "desc": "Setting up a RDBMS to track player metrics, in the future",
+        "tag": "Databases & JS",
+        "full_details": "Next for the server is setting up a database with a docker to track various player stats - login dates, longest ever play sessions, deaths, causes of death, advancements earned, total playtime, peak player counts and block interactions(how many ores are mined, etc.)"
+    }
+]

@@ -1,0 +1,337 @@
+/* --- Global Styles --- */
+* {
+    /* Using box-sizing so my padding doesn't break the 100% width of the containers */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    /* Forces the body to be at least screen height so the footer doesn't float up */
+    min-height: 100vh;
+    margin: 0;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Targets the H2 on every page (Contact, Skills, Projects) */
+#main_content h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* --- Structural Elements (Using IDs to hit the rubric requirements) --- */
+#header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid #3498db;
+}
+
+#navigation {
+    background-color: #34495e;
+    padding: 10px 0;
+    /* Keeps the nav stuck to the top when scrolling through the projects */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#navigation ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: color 0.3s, background 0.3s;
+}
+
+#navigation ul li a:hover {
+    background-color: #3498db;
+    border-radius: 4px;
+}
+
+#main_content {
+    width: 100%;
+    margin: 0px auto;
+    padding: 0;
+    /* flex: 1 pushes the footer down to the absolute bottom of the page */
+    flex: 1;
+}
+
+/* --- ENHANCED NAVIGATION LINKS --- */
+#navigation ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 500;
+    position: relative;
+    /* Smoothly fades the background and text color over 0.3 seconds */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect: Changes background and rounds the corners */
+#navigation ul li a:hover {
+    background-color: rgba(52, 152, 219, 0.2); /* Subtle blue tint */
+    color: #3498db;
+    border-radius: 4px;
+}
+
+/* Click Effect (Active): Gives immediate visual feedback when pressed */
+#navigation ul li a:active {
+    transform: scale(0.95); /* Slightly shrinks the link to mimic a button press */
+    background-color: #3498db;
+    color: white;
+}
+
+/* --- THE "SLIDING UNDERLINE" EFFECT --- */
+/* This creates a line that grows from the center when you hover */
+#navigation ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #3498db;
+    transition: all 0.3s ease-in-out;
+}
+
+#navigation ul li a:hover::after {
+    width: 80%; /* The line grows to 80% of the link width */
+    left: 10%;  /* Centers the growing line */
+}
+
+/* --- GLOBAL LINK STYLING (For links in your text) --- */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* --- Homepage Specifics --- */
+.intro-container {
+    display: flex;
+    align-items: center; /* Vertically centers the text next to my workstation image */
+    justify-content: center;
+    gap: 50px;  
+    padding: 60px 5%; /* Uses percentages to scale with the screen width regardless of screen size */
+    width: 100%;         
+}
+
+#homepage_image {
+    flex: 1;             /* Allows the image to take up proportional space */
+    max-width: 40%;    /* Keeps the photo from blowing up too huge on big monitors */
+    height: auto;
+    border-radius: 8px;
+}
+
+.intro-text {
+    flex: 2;             /* Gives the text twice as much room as the image so it reads well */
+}
+
+/* Media query to make the image stack vertically above the text on mobile */
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    #homepage_image {
+        max-width: 100%;      /* Lets the image fill the screen width on a phone */
+    }
+}
+
+#footer {
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* --- Project & Skills Grids --- */
+.project-grid, .skills-grid {
+    display: grid;
+    /* auto-fit makes the grid responsive without needing a bunch of media queries */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card, .skill-category {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-left: 5px solid #3498db;
+    cursor: pointer;
+}
+
+.p_tag {
+    display: inline-block;
+    background: #e1f0fa;
+    color: #3498db;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-category {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /* Adds a nice "lift" effect when hovered */
+}
+
+/* --- The Icon Fix --- */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    /* object-fit: contain prevents high-res images from breaking the layout */
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    /* inline-block allows multiple icons to sit next to each other */
+    display: inline-block; 
+}
+
+.skill-category ul {
+    text-align: left; /* Keeps the list items readable while the header is centered */
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+/* --- Project Detail Area --- */
+#detail_area {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+}
+
+/* --- Contact Form Styling --- */
+#contact_form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* --- REQUIREMENT: Focus State Styling --- */
+input:focus, textarea:focus {
+    /* Using a light yellow background and dark text when focused, per the rubric */
+    background-color: #fff9c4; 
+    color: #1a1a1a;            
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* --- Requirement: Error Messaging --- */
+.error_msg {
+    color: #c0392b;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 5px;
+    display: none; /* JavaScript will toggle this to block when needed */
+}
+
+#submit_btn, #reset_btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+#submit_btn {
+    background-color: #3498db;
+    color: white;
+}
+
+#reset_btn {
+    background-color: #ecf0f1;
+    color: #333;
+    margin-left: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    #navigation ul {
+        flex-direction: column;
+        align-items: center; /* Stacks the nav links neatly on mobile */
+    }
+}
